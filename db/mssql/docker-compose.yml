@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+
+  cat-api-mssql:
+    build:
+      context: ./
+      dockerfile: Dockerfile
+    image: cat-api-mssql-image
+    container_name: cat-api-mssql
+    environment:
+     - ACCEPT_EULA=Y
+     - SA_PASSWORD=C@t-@p11234
+    ports:
+     - "1433:1433"
