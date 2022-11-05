@@ -17,10 +17,6 @@ The Cat API
 - Gson
 - JUnit
 
-## Building
-
-### Setting up your Environment
-
 ## Testing Tasks
 
 ### Tests
@@ -34,7 +30,7 @@ The Cat API
 ```./gradlew bootRun```
 
 For local execution, please check the ```db/mssql``` folder that has the necessary to execute the container with
-database ```docker-compose up```
+database using the command ```docker-compose up```
 
 ## Swagger
 
