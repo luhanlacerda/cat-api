@@ -5,7 +5,7 @@ services:
   cat-api-mssql:
     build:
       context: ./
-      dockerfile: mysql.dockerfile
+      dockerfile: Dockerfile
     image: cat-api-mssql-image
     container_name: cat-api-mssql
     environment:
