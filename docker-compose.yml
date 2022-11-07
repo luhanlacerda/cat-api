@@ -1,0 +1,26 @@
+version: '3'
+services:
+  cat-api-mssql:
+    build:
+      context: .
+      dockerfile: mysql.dockerfile
+    image: cat-api-mssql-image
+    container_name: cat-api-mssql
+    environment:
+      - ACCEPT_EULA=Y
+      - SA_PASSWORD=C@t-@p11234
+    ports:
+     - "1433:1433"
+  cat-api:
+    image: luhanlacerda/cat-api:latest
+    container_name: cat-api
+    depends_on:
+      - cat-api-mssql
+    environment:
+      - SPRING_DATASOURCE_URL=jdbc:sqlserver://cat-api-mssql:1433;databaseName=CAT_API_SERVICE
+      - SPRING_DATASOURCE_USERNAME=CAT_API_APP_USER
+      - SPRING_DATASOURCE_PASSWORD=C@t-@p1-S3rv1c3
+      - SPRING_JPA_HIBERNATE_DDL_AUTO=validate
+      - cron.expression=0 */1 * * * *
+    ports:
+      - "8080:8080"
