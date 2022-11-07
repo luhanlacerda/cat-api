@@ -45,3 +45,7 @@ For docker execution, please go to main folder and execute the command ```docker
 ## Swagger
 
 ```http://localhost:8080/swagger-ui/index.html```
+
+## Collection
+
+```/doc/cat-api-collection.json```
